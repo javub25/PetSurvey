@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+body
+{
+  @apply bg-black/50;
+}
+
+@theme {
+  --Inter-Font: Inter, "sans-serif";
+}
+
+.app__space
+{
+  @apply pt-7 px-7 pb-10;
+}
+
+.form__checkbox
+{
+  @apply appearance-none border-1 border-[#E91C24] w-6 h-6 checked:bg-[#E91C24] shrink-0 rounded-md cursor-pointer;
+}
+
+.form__option
+{
+  @apply flex items-center gap-4 mb-4;
+}
