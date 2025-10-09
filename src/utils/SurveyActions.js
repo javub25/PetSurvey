@@ -3,6 +3,15 @@ import {
     disableSubmitButton 
 } from "@/utils/SubmitButton.js";
 
+import { 
+    navigateToNextPage
+} from "@/utils/Navigation.js";
+
+import { 
+    Confirmation 
+} from "@/pages/Confirmation/Confirmation.js";
+
+
 const getCheckBoxList = () => 
 {
     return Array.from(document.querySelectorAll('.form__checkbox'));
@@ -19,12 +28,11 @@ const getCheckBoxState = (checkboxList) =>
     })
 
     return {
-
         isCheckBoxSelected
     };
 }
 
-const handleSubmitOnCheckboxSelect = () => 
+const toggleSubmitOnCheckbox = () => 
 {
     const checkboxList = getCheckBoxList();
     
@@ -52,7 +60,30 @@ const updateSubmitBasedOnCheckboxes = (checkboxList) =>
     }
 }
 
+
+const handleSurveySubmit = () => 
+{   
+    const survey = getSurvey();
+
+    survey.addEventListener("submit", (submitEvent) => 
+    {
+        submitEvent.preventDefault();
+
+        const {ConfirmationPage} = Confirmation();
+
+        navigateToNextPage(ConfirmationPage)
+    });
+}
+
+const getSurvey = () => 
+{
+    return document.querySelector("form");
+}
+
+
 export 
 {
-    handleSubmitOnCheckboxSelect
+    toggleSubmitOnCheckbox,
+    handleSurveySubmit,
+    getSurvey
 };

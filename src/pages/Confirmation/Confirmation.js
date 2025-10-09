@@ -1,6 +1,8 @@
 export const Confirmation = () => 
 {
-    return `
+    const ConfirmationPage = document.createElement('div');
+
+    ConfirmationPage.innerHTML = `
         <header>
             <h1 class="Inter-Font text-2xl">Thank you!</h1>
         </header>
@@ -14,5 +16,9 @@ export const Confirmation = () =>
                 Close
             </button>
         </section>
-        `
+    `
+
+    return {
+        ConfirmationPage
+    };
 }
