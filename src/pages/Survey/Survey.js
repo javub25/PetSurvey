@@ -1,7 +1,9 @@
 
 import 
 { 
-    handleSubmitOnCheckboxSelect
+    toggleSubmitOnCheckbox,
+    handleSurveySubmit
+
 } from "@/utils/SurveyActions.js";
 
 import 
@@ -19,5 +21,7 @@ export const Survey = () =>
     
     addPageToPopup(formComponent);
 
-    handleSubmitOnCheckboxSelect();
+    toggleSubmitOnCheckbox();
+
+    handleSurveySubmit();
 }

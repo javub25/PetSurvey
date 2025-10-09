@@ -1,8 +1,16 @@
 import '@testing-library/jest-dom'
-import { handleSubmitOnCheckboxSelect } from '@/utils/SurveyActions.js';
+import { screen } from '@testing-library/dom';
+
+import 
+{ 
+    toggleSubmitOnCheckbox,
+    handleSurveySubmit
+
+} from '@/utils/SurveyActions.js';
 
 import { 
-    mockForm, 
+    getFormMockFromHTML,
+    mockPopupPageWithForm,
     getSubmitButton, 
     getFirstCheckboxItem,
     simulateOneClick,
@@ -10,10 +18,9 @@ import {
 
 } from '@/pages/Survey/Survey.testUtils.js';
 
-
 beforeEach(() => 
 {
-    mockForm();
+    document.body.innerHTML = getFormMockFromHTML();
 })
 
 
@@ -28,7 +35,7 @@ describe("Submit Button test suite", () =>
 
     test("it should be enabled once checkbox is selected", () => 
     {
-         handleSubmitOnCheckboxSelect();
+         toggleSubmitOnCheckbox();
 
         const checkboxItem = getFirstCheckboxItem();
 
@@ -41,7 +48,7 @@ describe("Submit Button test suite", () =>
 
     test("it should be disabled once checkbox is unselected", () => 
     {
-        handleSubmitOnCheckboxSelect();
+        toggleSubmitOnCheckbox();
 
         const checkboxItem = getFirstCheckboxItem();
 
@@ -51,5 +58,27 @@ describe("Submit Button test suite", () =>
 
         expect(submitButton).toBeDisabled();
 
+    });
+})
+
+describe("Submit data test suite", () => 
+{
+    test("it should display confirmation message after submission", () => 
+    {   
+        mockPopupPageWithForm();
+
+        toggleSubmitOnCheckbox();
+
+        handleSurveySubmit();
+
+        const checkboxItem = getFirstCheckboxItem();
+        simulateOneClick(checkboxItem);
+
+        const {submitButton} = getSubmitButton();
+        simulateOneClick(submitButton);
+
+        const confirmationMessage = screen.getByText("Your response has been received.");
+
+        expect(confirmationMessage).toBeInTheDocument();
     });
 })
