@@ -69,9 +69,12 @@ const handleSurveySubmit = () =>
     {
         submitEvent.preventDefault();
 
+        submitSurvey();
+
         const {ConfirmationPage} = Confirmation();
 
-        navigateToNextPage(ConfirmationPage)
+        navigateToNextPage(ConfirmationPage);
+
     });
 }
 
@@ -80,6 +83,54 @@ const getSurvey = () =>
     return document.querySelector("form");
 }
 
+const submitSurvey = () => 
+{
+    const {surveyValues} = getValuesFromSurvey();
+
+    sendSurveyToBraze(surveyValues);
+}
+
+const sendSurveyToBraze = (surveyValues) => 
+{
+    const {personalized_experiences} = surveyValues;
+
+    const eventName = "Purina_UnitedKingdom_SurveyHomepage_UK";
+
+    try
+    {
+        brazeBridge.logCustomEvent(eventName, 
+            {    
+                personalized_experiences_homepage: personalized_experiences 
+            }
+        );
+    }
+
+    catch(error)
+    {
+        console.error("Error sending survey data", error);
+    }
+}
+
+const getValuesFromSurvey = () => 
+{
+    const survey = getSurvey();
+
+    const fields = new FormData(survey);
+
+    const surveyValues = 
+    {
+        personalized_experiences: getAllPersonalizedExperiences(fields)
+    }
+
+    return {
+        surveyValues
+    }
+}
+
+const getAllPersonalizedExperiences = (surveyValues) =>
+{
+    return surveyValues.getAll('personalized_experiences');
+}
 
 export 
 {

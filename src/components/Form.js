@@ -14,7 +14,7 @@ export const Form = () =>
                 
             <form method="POST">
                 <div class="form__option">
-                    <input type="checkbox" value="PET_DASHBOARD" id="PET_DASHBOARD" 
+                    <input type="checkbox" name="personalized_experiences" value="PET_DASHBOARD" id="PET_DASHBOARD" 
                         class="form__checkbox"/>
                         <label for="PET_DASHBOARD" class="Inter-Font">
                             A dashboard to save and manage my pet's info
@@ -22,7 +22,7 @@ export const Form = () =>
                     </div>
 
                     <div class="form__option">
-                        <input type="checkbox" value="AI_SCANNING" id="AI_SCANNING" 
+                        <input type="checkbox" name="personalized_experiences" value="AI_SCANNING" id="AI_SCANNING" 
                         class="form__checkbox"/>
                         <label for="AI_SCANNING" class="Inter-Font">
                             AI scanning
@@ -30,7 +30,7 @@ export const Form = () =>
                     </div>
 
                     <div class="form__option">
-                        <input type="checkbox" value="RECOMMENDED_ARTICLES" id="RECOMMENDED_ARTICLES" 
+                        <input type="checkbox" name="personalized_experiences" value="RECOMMENDED_ARTICLES" id="RECOMMENDED_ARTICLES" 
                         class="form__checkbox"/>
                         <label for="RECOMMENDED_ARTICLES" class="Inter-Font">
                             Recommended articles based on my pet's breed/age
@@ -38,7 +38,7 @@ export const Form = () =>
                     </div>
 
                     <div class="form__option">
-                        <input type="checkbox" value="VET_REMINDERS" id="VET_REMINDERS" 
+                        <input type="checkbox" name="personalized_experiences" value="VET_REMINDERS" id="VET_REMINDERS" 
                         class="form__checkbox"/>
                         <label for="VET_REMINDERS" class="Inter-Font">
                             Reminders for vet visits/vaccionations
@@ -46,7 +46,7 @@ export const Form = () =>
                     </div>
 
                     <div class="form__option">
-                        <input type="checkbox" value="SAMPLES_AND_PROMOTIONS" id="SAMPLES_AND_PROMOTIONS" 
+                        <input type="checkbox" name="personalized_experiences" value="SAMPLES_AND_PROMOTIONS" id="SAMPLES_AND_PROMOTIONS" 
                         class="form__checkbox"/>
                         <label for="SAMPLES_AND_PROMOTIONS" class="Inter-Font">
                             Samples and discounts
@@ -54,7 +54,7 @@ export const Form = () =>
                     </div>
 
                     <div class="form__option">
-                        <input type="checkbox" value="OFFERS_AND_PROMOTIONS" id="OFFERS_AND_PROMOTIONS" 
+                        <input type="checkbox" name="personalized_experiences" value="OFFERS_AND_PROMOTIONS" id="OFFERS_AND_PROMOTIONS" 
                         class="form__checkbox"/>
                         <label for="OFFERS_AND_PROMOTIONS" class="Inter-Font">
                             Tailored pet services and events
