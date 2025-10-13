@@ -28,9 +28,24 @@ const getCurrentPopupPage = () =>
     return document.querySelector(".pages");
 }
 
+const closePopup = (stepPage = document) => 
+{
+    const button = getButtonToClosePopup(stepPage);
+
+    button.addEventListener("click", () => 
+    {
+        brazeBridge.closeMessage();
+    })
+}
+
+const getButtonToClosePopup = (stepPage) =>
+{
+    return stepPage.querySelector("[aria-label='Close popup']");
+}
 
 export 
 {
     addPageToPopup,
-    removePageFromPopup
+    removePageFromPopup,
+    closePopup
 }
