@@ -5,18 +5,25 @@ body
   @apply bg-black/50;
 }
 
-@theme {
+@theme 
+{
   --Inter-Font: Inter, "sans-serif";
+  --red: #E91C24;
 }
 
 .app__space
 {
-  @apply pt-7 px-7 pb-10;
+  @apply pt-4 md:px-10 px-6 pb-10 mt-[6rem];
 }
 
 .form__checkbox
 {
-  @apply appearance-none border-1 border-[#E91C24] w-6 h-6 checked:bg-[#E91C24] shrink-0 rounded-md cursor-pointer;
+  @apply appearance-none border-1 border-[red] w-6 h-6 checked:bg-[red] shrink-0 rounded-md cursor-pointer;
+}
+
+.form__close-button
+{
+  @apply bg-[red] rounded-md text-white py-3 w-[100px] md:mx-auto ml-0 mt-8 block cursor-pointer text-center;
 }
 
 .form__option
