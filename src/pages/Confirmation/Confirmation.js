@@ -8,11 +8,11 @@ export const Confirmation = () =>
 
     ConfirmationPage.innerHTML = `
         <header>
-            <h1 class="Inter-Font text-2xl">Thank you!</h1>
+            <h1 class="Inter-Font text-2xl mt-3 md:text-center">Thank you!</h1>
         </header>
 
         <section>
-            <p class="Inter-Font mt-4 mb-6">
+            <p class="Inter-Font mt-5 mb-7 text-base md:text-center">
                 Your response has been received.
             </p>
 
@@ -20,8 +20,7 @@ export const Confirmation = () =>
                 type="button"
                 data-button-id="Close"
                 aria-label="Close popup" 
-                class="form-button bg-[#E91C24] 
-                rounded-md text-white py-2 w-[130px] ml-0 mt-8 block mx-auto Inter-Font cursor-pointer text-center">
+                class="form__close-button Inter-Font">
                 Close
             </button>
         </section>

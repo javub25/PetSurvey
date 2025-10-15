@@ -7,7 +7,7 @@ export const Form = () =>
         </header>
     
         <section>
-            <p class="Inter-Font mt-4 mb-6">
+            <p class="Inter-Font mt-5 mb-7 text-base">
                 We're enhancing our platform with a free profile. What personalised experiences would you most appreciate? 
                 (Select all that apply)
             </p>
@@ -65,7 +65,7 @@ export const Form = () =>
                         type="submit"
                         data-button-id="SurveySubmitted" 
                         disabled 
-                            class="cursor-default form-button bg-[#7C7C7C] rounded-md text-white py-2 w-[130px] ml-0 mt-8 block mx-auto Inter-Font text-center">
+                            class="cursor-default form-button bg-[#7C7C7C] rounded-md text-white py-3 w-[100px] ml-0 mt-8 block mx-auto Inter-Font text-center">
                         Submit
                     </button>
                 </form>
